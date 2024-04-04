@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "system402-e5e24": {
+      "hosting": {
+        "app": [
+          "system402-e5e24"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+D:\VS\CimatPoC\Api\Code\Foundation\bin\Debug\Foundation.dll
+D:\VS\CimatPoC\Api\Code\Foundation\bin\Debug\Foundation.pdb
+D:\VS\CimatPoC\Api\Code\Foundation\obj\Debug\Foundation.csproj.AssemblyReference.cache
+D:\VS\CimatPoC\Api\Code\Foundation\obj\Debug\Foundation.csproj.CoreCompileInputs.cache
+D:\VS\CimatPoC\Api\Code\Foundation\obj\Debug\Foundation.dll
+D:\VS\CimatPoC\Api\Code\Foundation\obj\Debug\Foundation.pdb
+D:\Documentos\PROYECTOS\ENCUESTA DE COMPETITIVIDAD\PROYECTO\P1-Continuación del proyecto\V1-Local\Code\Foundation\bin\Debug\Foundation.dll
+D:\Documentos\PROYECTOS\ENCUESTA DE COMPETITIVIDAD\PROYECTO\P1-Continuación del proyecto\V1-Local\Code\Foundation\bin\Debug\Foundation.pdb
+D:\Documentos\PROYECTOS\ENCUESTA DE COMPETITIVIDAD\PROYECTO\P1-Continuación del proyecto\V1-Local\Code\Foundation\obj\Debug\Foundation.csproj.AssemblyReference.cache
+D:\Documentos\PROYECTOS\ENCUESTA DE COMPETITIVIDAD\PROYECTO\P1-Continuación del proyecto\V1-Local\Code\Foundation\obj\Debug\Foundation.csproj.CoreCompileInputs.cache
+D:\Documentos\PROYECTOS\ENCUESTA DE COMPETITIVIDAD\PROYECTO\P1-Continuación del proyecto\V1-Local\Code\Foundation\obj\Debug\Foundation.dll
+D:\Documentos\PROYECTOS\ENCUESTA DE COMPETITIVIDAD\PROYECTO\P1-Continuación del proyecto\V1-Local\Code\Foundation\obj\Debug\Foundation.pdb

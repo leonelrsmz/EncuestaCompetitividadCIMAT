@@ -1,0 +1,13 @@
+<form autocomplete="off" [formGroup]="formOpenCur" (ngSubmit)="submitAnswerTxtCurNext()" class="container">
+    <div class="row">
+        <div class="form-group input-group col-md-3">
+            <span class="input-group-text">$</span>
+            <input type="number" class="form-control" placeholder="Respuesta" name="answerNum1" [(ngModel)]="Answered[0].answerText" [(value)]="Answered[0].answerText" formControlName="answerNum1" [class.is-invalid]='invalidTxt1' aria-label="Amount (to the nearest dollar)">
+            <span class="input-group-text">.00</span>
+            <small class="text-danger" *ngIf="invalidTxt1">Este campo es requerido</small>
+        </div>
+    </div>
+    <div class="form-group col-6">
+        <button class="btn btn-lg btn-cimat btn-block" type="submit">Responder</button>
+    </div>
+</form>

@@ -1,0 +1,46 @@
+<app-loading *ngIf="loading"></app-loading>
+<app-error *ngIf="error" [message]="errorMessage"></app-error>
+<div *ngIf="!loading" class="container body-div text-center">
+    <div class="row">
+        <form autocomplete="off" [formGroup]="form" (ngSubmit)="onLogin()" class="container col-12">
+            <img class="mb-4" src="http://10.102.1.87/Cimat.Web/assets/images/cimat.png" alt="cimat" height="72">
+            <h3 class="h3 mb-3 font-weight-normal">Iniciar sesion</h3>
+            <div class="form-row">
+                <div class="form-group col-12">
+                    <input type="email" class="form-control" id="inputEmail4" placeholder="Email" formControlName="email" [class.is-invalid]='invalidEmail'>
+                    <small class="text-danger" *ngIf="invalidEmail">Ingresa un email valido</small>
+                </div>
+                <div class="form-group col-12">
+                    <input type="password" class="form-control" id="inputPassword4" placeholder="Password" formControlName="password" [class.is-invalid]='invalidPassword'>
+                    <small class="text-danger" *ngIf="invalidPassword">Este campo debe tener al menos 6 carateres</small>
+                </div>
+                <!-- <div class="form-group col-12">
+                <label>
+                    <input type="checkbox" value="remember-me"> Remember me
+                </label>
+            </div> -->
+            </div>
+            <!-- <div class="form-group col text-right">
+                <div>
+                    <a routerLink="/register" class="txt1">
+                    Registro
+                </a>
+                </div>
+            </div> -->
+            <div class="form-group col-12">
+                <button class="btn btn-lg btn-cimat btn-block" type="submit">Iniciar</button>
+            </div>
+
+            <!-- <div class="form-group col-12">
+                <button class="btn btn-lg btn-light btn-block" type="button" (click)="onEmailLogin()">Email</button>
+            </div> -->
+
+            <div class="form-group col-12">
+                <button class="btn btn-lg btn-block btn-google" type="button" (click)="onGoogleLogin()">
+                    <img src="http://10.102.1.87/Cimat.Web/assets/images/G.JPG" alt="Google">
+                    Continuar con Google
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

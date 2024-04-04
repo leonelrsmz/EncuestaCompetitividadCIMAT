@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <span class="navbar-brand mb-0 h1">PoC CIMAT</span>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <!-- active -->
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['home']">
+                    <i class="fa fa-home" aria-hidden="true"></i> Inicio
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['survey-container']">
+                    <i class="fa fa-pie-chart" aria-hidden="true"></i> Encuesta
+                </a>
+            </li>
+            <li class="nav-item" *ngIf="isAdmin">
+                <a class="nav-link" [routerLink]="['admin']">
+                    <i class="fa fa-lock" aria-hidden="true"></i> Administrar
+                </a>
+            </li>
+            <!-- <li class="nav-item">
+                <a class="nav-link" [routerLink]="['survey-details', 15]">
+                    <i class="fa fa-lock" aria-hidden="true"></i> DevTest
+                </a>
+            </li> -->
+        </ul>
+
+        <div class="my-2 my-lg-0">
+            <a href="" class="btn btn-danger" (click)="logout()">
+                <i class="fa fa-sign-out" aria-hidden="true"></i> Salir
+            </a>
+        </div>
+    </div>
+</nav>

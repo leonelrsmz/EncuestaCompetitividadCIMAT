@@ -1,0 +1,25 @@
+<!-- Sidebar  -->
+<nav id="sidebar">
+    <div class="sidebar-header link" id="sidebarCollapse">
+        <i class="fa fa-bars" aria-hidden="true" id="menuIcon"></i>
+        <span id="sidebarCollapsetxt">POC</span>
+    </div>
+
+    <ul class="list-unstyled components">
+        <li class="link active" routerLinkActive="active">
+            <a routerLink="home">
+                <i class="fa fa-home" aria-hidden="true"></i> Inicio
+            </a>
+        </li>
+        <li class="link" routerLinkActive="active">
+            <a routerLink="one">
+                <i class="fa fa-pie-chart" aria-hidden="true"></i> Encuestas
+            </a>
+        </li>
+        <li class="link" routerLinkActive="active">
+            <a href="/" (click)="logout()">
+                <i class="fa fa-sign-out" aria-hidden="true"></i> Salir
+            </a>
+        </li>
+    </ul>
+</nav>

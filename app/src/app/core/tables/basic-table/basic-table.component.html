@@ -1,0 +1,41 @@
+<div class="container tb-comtaomer">
+    <div class="row">
+        <div class="col-sm-8">
+            <h3>{{ContentTb.title}}</h3>
+        </div>
+        <!-- <div class=" col-md-4 text-right">
+            <button routerLink="/add-item/ " type="button" class="btn btn-primary" aria-pressed="true" data-toggle="modal" data-target="#modalAddEdit">
+                <i class="fa fa-plus mr-2" aria-hidden="true"></i>Agragar
+            </button>
+        </div> -->
+    </div>
+
+    <hr>
+
+    <p *ngIf="!ContentTb.data"><em>Loading...</em></p>
+
+    <div *ngIf="ContentTb.data.length < 1" class="alert alert-warning d-flex align-items-center" role="alert">
+        <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+        <div>
+            No hay datos para mostrar
+        </div>
+    </div>
+
+    <div *ngIf="ContentTb.data.length > 0" class="table-responsive">
+        <table class="table table-hover">
+            <thead class="thead-light">
+                <tr>
+                    <th *ngFor="let head of headsTb" scope="col">{{head}} </th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let item of ContentTb.data; let i = index">
+                <tr>
+                    <th scope="row">{{item.data1}}</th>
+                    <td>{{item.data2}}</td>
+                    <td>{{item.data3}}</td>
+                    <td>{{item.data4}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

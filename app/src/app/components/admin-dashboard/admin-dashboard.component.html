@@ -1,0 +1,5 @@
+<!-- Page Content  -->
+<!-- <h3>{{SearchText}}</h3> -->
+<div id="content">
+    <app-user-table *ngIf="!loading" (response)="outputResponse($event)" [smartTbU]="smartTb"></app-user-table>
+</div>

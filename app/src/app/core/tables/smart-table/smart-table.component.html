@@ -1,0 +1,92 @@
+<div class="container tb-comtaomer">
+    <div class="row">
+        <div class="col-sm-8">
+            <h3>{{smartTb.title}}</h3>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="d-flex flex-row-reverse bd-highlight">
+        <div class="form-inline">
+            <div class="input-group mb-2 mr-sm-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></div>
+                </div>
+                <input type="text" class="form-control" placeholder="Filtrar" [(ngModel)]="SearchText" (keyup)="searchChanged()" #searchText />
+                <!-- <button type="button" class="btn btn-outline-secondary" (click)="searchChanged()">
+                    Filtrar
+                </button> -->
+            </div>
+        </div>
+    </div>
+
+    <p *ngIf="!smartTb.data"><em>Loading...</em></p>
+
+    <div *ngIf="smartTb.data" class="table-responsive">
+
+        <div class="d-flex flex-row-reverse bd-highlight">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item"><a class="page-link">{{smartTb.Page}} de {{PagesTotal}}</a></li>
+
+                    <li class="page-item" (click)="backPage()">
+                        <a class="page-link" aria-label="Previous">
+                            <span aria-hidden="true"><</span>
+                        </a>
+                    </li>
+                    <li class="page-item" (click)="nextPage()">
+                        <a class="page-link" aria-label="Next" is>
+                            <span aria-hidden="true">></span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <table class="table table-hover">
+            <thead class="thead-light">
+                <tr>
+                    <th *ngFor="let head of headsTb" scope="col">{{head}} </th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let item of smartTb.data; let i = index">
+                <tr>
+                    <!-- <th id="id" hidden>{{item.id}}</th> -->
+                    <th scope="row">{{item.data1}}</th>
+                    <td>{{item.data2}}</td>
+                    <td>{{item.data3}}</td>
+                    <td>{{item.data4}}</td>
+                    <td>
+                        <!-- <button class="btn btn-info mr-1" data-toggle="tooltip" data-placement="top" title="Editar">
+                            <i class="fa fa-pencil"></i>
+                        </button> -->
+                        <button class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Ver Respuestas" [routerLink]="['/survey-details', item.data1]">
+                            <i class="fa fa-list-alt"></i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="d-flex flex-row-reverse bd-highlight">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item"><a class="page-link">{{smartTb.Page}} de {{PagesTotal}}</a></li>
+
+                    <li class="page-item" (click)="backPage()">
+                        <a class="page-link" aria-label="Previous">
+                            <span aria-hidden="true"><</span>
+                        </a>
+                    </li>
+                    <li class="page-item" (click)="nextPage()">
+                        <a class="page-link" aria-label="Next" is>
+                            <span aria-hidden="true">></span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,5 @@
+<div id="content">
+    <app-loading *ngIf="loading"></app-loading>
+    <app-error *ngIf="error" [message]="errorMessage"></app-error>
+    <app-basic-table *ngIf="!loading" [ContentTb]="ContentTb"></app-basic-table>
+</div>

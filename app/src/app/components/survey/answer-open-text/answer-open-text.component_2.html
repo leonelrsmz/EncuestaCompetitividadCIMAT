@@ -1,0 +1,19 @@
+<form autocomplete="off" [formGroup]="formOpenTxt" (ngSubmit)="submitAnswerTxtNext()" class="container">
+    <div class="row">
+        <div class="form-group col-md-3">
+            <input type="text" class="form-control" placeholder="Respuesta" name="answerTxt1" [(ngModel)]="Answered[0].answerText" [(value)]="Answered[0].answerText" formControlName="answerTxt1" [class.is-invalid]='invalidTxt1' maxlength="500">
+            <small class="text-danger" *ngIf="invalidTxt1">Este campo es requerido</small>
+        </div>
+    </div>
+    <div class="form-group col-6">
+        <button class="btn btn-lg btn-cimat btn-block" type="submit">Responder</button>
+    </div>
+    <div class="form-group col-6" *ngIf="ExistPreviousQuestion">
+        <button class="btn btn-lg btn-cimat btn-block" (click)="backToQuestion()">Regresar</button>
+    </div>
+    <div>
+        <label>
+            Radio selected: {{Answered[0].answerText}}
+        </label>
+    </div>
+</form>

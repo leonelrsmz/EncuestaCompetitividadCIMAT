@@ -1,0 +1,30 @@
+<form autocomplete="off" [formGroup]="formRadioBtn" (ngSubmit)="submitAnswerRadioGroupNext()" class="container" novalidate>
+    <div class="row" *ngFor="let Answer of Answers">
+        <div class="form-check col-md">
+            
+            
+            <input class="form-check-input" type="radio" name="flexRadioDefault" formControlName="flexRadioDefault" id="flexRadioDefault{{Answer.answerId}}" [class.is-invalid]='invalidRadio' [(ngModel)]="answerId" value="{{Answer.answerId}}">
+            <!--input class="form-check-input" [(ngModel)]="answerId" value="{{Answer.answerId}}" type="radio" name="flexRadioDefault" formControlName="flexRadioDefault" id="flexRadioDefault{{Answer.answerId}}" [class.is-invalid]='invalidRadio'-->
+            
+            <label class="form-check-label" for="flexRadioDefault{{Answer.answerId}}">
+                {{Answer.answerId}}. {{Answer.answer}}
+            </label>
+            <div class="form-group col-md-3" *ngIf="Answer.expectedText">
+                <input type="text" class="form-control" placeholder="Respuesta" name="answerTxt1" [(ngModel)]="AnswerText" [(value)]="AnswerText" formControlName="answerTxt1" (change)="modelChanged($event)" maxlength="500" [class.is-invalid]='InvalidTxt'>
+                <small class="text-danger" *ngIf="InvalidTxt">Este campo es requerido</small>
+            </div>
+        </div>
+    </div>
+    <small class="text-danger" *ngIf="invalidRadio">Es requerido seleccionar una opcion</small>
+    <div class="form-group col-6">
+        <button class="btn btn-lg btn-cimat btn-block" type="submit">Responder</button>
+    </div>
+    <!--div class="form-group col-6">
+        <button class="btn btn-lg btn-cimat btn-block" (click)="backToQuestion()">Regresar</button>
+    </div-->
+    <div>
+        <!--label>
+            Radio selected: {{answerId}}
+        </label-->
+    </div>
+</form>

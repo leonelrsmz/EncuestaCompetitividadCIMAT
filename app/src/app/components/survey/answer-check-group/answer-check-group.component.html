@@ -1,0 +1,19 @@
+<form autocomplete="off" [formGroup]="formCheckBox" (ngSubmit)="submitAnswerRadioGroupNext()" class="container" novalidate>
+    <div class="row" *ngFor="let Answer of Answers">
+        <div class="form-check col-md">
+            <input class="form-check-input" type="checkbox" value="" name="flexCheckChecked" formControlName="flexCheckChecked" id="flexCheckChecked{{Answer.answerId}}" [class.is-invalid]='invalidCheck' [(ngModel)]="Answer.isChecked" (change)="checkChanged($event)">
+            <label class="form-check-label" for="flexCheckChecked{{Answer.answerId}}">
+                {{Answer.answerId}}. {{Answer.answer}}
+            </label>
+            <div class="form-group col-md-3" *ngIf="Answer.expectedText">
+                <input type="text" class="form-control" placeholder="Respuesta" name="answerTxt1" [(ngModel)]="Answer.answerTxt" [(value)]="Answer.answerTxt" (change)="modelChanged($event, Answer)" maxlength="500" [class.is-invalid]='Answer.isInvalid'>
+                <small class="text-danger" *ngIf="Answer.isInvalid">Este campo es requerido</small>
+            </div>
+        </div>
+    </div>
+    <small class="text-danger" *ngIf="invalidCheck && Quesion.expectedQuantityAnswers === 0">Es requerido seleccionar alguna opcion</small>
+    <small class="text-danger" *ngIf="invalidCheck && Quesion.expectedQuantityAnswers !== 0">Es requerido seleccionar {{Quesion.expectedQuantityAnswers}} opcion(es)</small>
+    <div class="form-group col-6">
+        <button class="btn btn-lg btn-cimat btn-block" type="submit">Responder</button>
+    </div>
+</form>

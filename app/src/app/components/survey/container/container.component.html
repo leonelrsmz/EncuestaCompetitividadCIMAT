@@ -1,0 +1,50 @@
+<app-loading *ngIf="loading"></app-loading>
+<app-error *ngIf="error" [message]="errorMessage"></app-error>
+<div *ngIf="!loading" class="wrapper">
+    <!-- Page Content  -->
+    <div id="content" *ngIf="!IsFinish">
+        <div id="session">
+            {{currentQuesion.sectionId}}. {{currentQuesion.section}}
+        </div>
+
+        <div id="question">
+            {{currentQuesion.questionId}}. {{currentQuesion.decription}}
+        </div>
+
+        <div id="answer">
+            <div *ngIf="currentQuesion.questionTypeId == 1">
+                <!-- answer text -->
+                <app-answer-open-text *ngIf="!currentQuesion.expectedNumber" (valueResponse)="outputResponse($event)" [CurrentQuesionFull]="sendShowAnswerModel"></app-answer-open-text>
+                <!-- answer number -->
+                <app-answer-open-text-number *ngIf="currentQuesion.expectedNumber && !currentQuesion.expected100pc && !currentQuesion.expectedCurrency && !currentQuesion.expectedYear" (valueResponse)="outputResponse($event)" [CurrentQuesionFull]="sendShowAnswerModel"></app-answer-open-text-number>
+                <!-- answer year -->
+                <app-answer-open-text-year *ngIf="currentQuesion.expectedNumber && !currentQuesion.expected100pc && !currentQuesion.expectedCurrency && currentQuesion.expectedYear" (valueResponse)="outputResponse($event)" [CurrentQuesionFull]="sendShowAnswerModel"></app-answer-open-text-year>
+                <!-- answer currency -->
+                <app-answer-open-text-currency *ngIf="currentQuesion.expectedNumber && !currentQuesion.expected100pc && currentQuesion.expectedCurrency && !currentQuesion.expectedYear" (valueResponse)="outputResponse($event)" [CurrentQuesionFull]="sendShowAnswerModel"></app-answer-open-text-currency>
+            </div>
+            <div *ngIf="currentQuesion.questionTypeId == 2">
+                <app-answer-radio-group (valueResponse)="outputResponse($event)" [CurrentQuesionFull]="sendShowAnswerModel"></app-answer-radio-group>
+            </div>
+            <div *ngIf="currentQuesion.questionTypeId == 3">
+                <!-- answer one hundred per cent -->
+                <app-answer-open-text-onehundredpc *ngIf="currentQuesion.expectedNumber && currentQuesion.expected100pc && !currentQuesion.expectedCurrency && !currentQuesion.expectedYear" (valueResponse)="outputResponse($event)" [CurrentQuesionFull]="sendShowAnswerModel"></app-answer-open-text-onehundredpc>
+                <!-- answer check box -->
+                <app-answer-check-group *ngIf="!currentQuesion.expectedNumber && !currentQuesion.expected100pc && !currentQuesion.expectedCurrency && !currentQuesion.expectedYear" (valueResponse)="outputResponse($event)" [CurrentQuesionFull]="sendShowAnswerModel"></app-answer-check-group>
+            </div>
+        </div>
+
+        <!-- <form (ngSubmit)="submit()" class="container">
+            <div class="form-group col-6" *ngIf="IsNext">
+                <button class="btn btn-lg btn-cimat btn-block" type="submit">Resposnder</button>
+            </div>
+        </form> -->
+    </div>
+    <form (ngSubmit)="submitFinish()" class="container" *ngIf="IsFinish && !FinishedText">
+        <div class="form-group col-6">
+            <button class="btn btn-lg btn-cimat btn-block" type="submit">Finalizar</button>
+        </div>
+    </form>
+    <div id="content" *ngIf="FinishedText">
+        Ya se ha finalizado la encuesta.
+    </div>
+</div>

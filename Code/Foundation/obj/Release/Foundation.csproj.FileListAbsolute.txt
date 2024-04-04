@@ -1,0 +1,6 @@
+D:\VS\CimatPoC\Api\Code\Foundation\bin\Release\Foundation.dll
+D:\VS\CimatPoC\Api\Code\Foundation\bin\Release\Foundation.pdb
+D:\VS\CimatPoC\Api\Code\Foundation\obj\Release\Foundation.csproj.AssemblyReference.cache
+D:\VS\CimatPoC\Api\Code\Foundation\obj\Release\Foundation.csproj.CoreCompileInputs.cache
+D:\VS\CimatPoC\Api\Code\Foundation\obj\Release\Foundation.dll
+D:\VS\CimatPoC\Api\Code\Foundation\obj\Release\Foundation.pdb

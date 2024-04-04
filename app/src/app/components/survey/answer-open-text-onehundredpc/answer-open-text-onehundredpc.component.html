@@ -1,0 +1,21 @@
+<form autocomplete="off" [formGroup]="formOpenOneHPC" (ngSubmit)="submitAnswerTxtNext()" class="container" novalidate>
+    <div class="row" *ngFor="let Answer of Answers">
+        <label class="form-check-label col-md-2" for="flexRadioDefault{{Answer.answerId}}">
+                {{Answer.answerId}}. {{Answer.answer}}
+            </label>
+        <div class="input-group col-md-5">
+            <input type="number" class="form-control" placeholder="Respuesta" aria-describedby="basic-addon2" [(ngModel)]="Answer.answerTxt" [(value)]="Answer.answerTxt" name="answerNum1" formControlName="answerNum1" (change)="modelChanged($event)" [class.is-invalid]='Answer.isInvalid'
+                min="0" max="100">
+            <span class="input-group-text" id="basic-addon2">%</span>
+        </div>
+        <small class="text-danger" *ngIf="Answer.isInvalid">Este campo es requerido</small>
+    </div>
+    <small class="text-danger" *ngIf="isInvalid">El total de la suma debe ser 100%</small>
+    <br />
+    <label class="h4">
+        Total: {{sum}}%
+    </label>
+    <div class="form-group col-6">
+        <button class="btn btn-lg btn-cimat btn-block" type="submit">Responder</button>
+    </div>
+</form>
